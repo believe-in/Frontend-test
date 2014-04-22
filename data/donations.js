@@ -1,8 +1,21 @@
 var data = [
 	{
 		id: 100,
-		amount: 1000,
-		message: 'Vice Banksy art party sustainable, kitsch tofu try-hard narwhal single-origin coffee seitan Intelligentsia. Letterpress mlkshk Schlitz cardigan, 8-bit VHS shabby chic typewriter pickled distillery.'
+		amount: 2000,
+		message: 'Go for it Anna, good luck with the read-a-thon!',
+		name: 'Matthias Metternich'
+	},
+	{
+		id: 101,
+		amount: 2000,
+		message: 'Looks like a great cause Anna, good luck with your fundraiser!',
+		name: 'Alistair Kilpatrick'
+	},
+	{
+		id: 102,
+		amount: 2000,
+		message: 'Good luck Anna',
+		name: 'John Reed'
 	}
 ];
 
