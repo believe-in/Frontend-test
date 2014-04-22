@@ -1,0 +1,281 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #333;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  background: #eee;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #777;
+  text-decoration: underline;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+
+/* ==========================================================================
+   UI styles
+   ========================================================================== */
+
+.app{
+  padding: 2.25em 1.25em 1.875em;
+}
+
+h1, h2{
+  margin: 0;
+  font-size: 1.875em;
+  font-weight: 400;
+  text-align: center;
+}
+h2{
+  font-size: 1.125em;
+  color: #999;
+}
+
+.donations{
+  padding: 0;
+  margin-top: 1.75em;
+  list-style: none;
+}
+  .donations > li{
+    position: relative;
+    padding: 1.125em;
+    margin-bottom: 2.5em;
+    background: #fff;
+    border-radius: 10px;
+  }
+  .donations > li:after{
+    content: "";
+    position: absolute;
+    bottom: -1.25em;
+    right: 2em;
+    border-width: 1.25em 0 0 1.25em;
+    border-style: solid;
+    border-color: #fff transparent;
+  }
+
+    .donation__name{
+      margin-bottom: 0.25em;
+      font-size: 0.8125em;
+      color: #669933;
+    }
+
+    .donation__message{
+      margin-bottom: 0.5em;
+      font-size: 1.5em;
+      line-height: 1.16;
+    }
+
+    .donation__details{
+      margin-bottom: 20px;
+    }
+      .donation__beneficiary{
+        float: right;
+        margin-left: 10px;
+      }
+      .donation__amount{
+        overflow: hidden;
+        padding: 0 0.75em;
+        line-height: 41px;
+        background: #eee no-repeat top right url(data:image/gif;base64,R0lGODlhGAApALMAAP7+/vHx8fr6+vn5+fLy8u/v7/39/fPz8/z8/Pj4+Pv7+/T09PX19f///+7u7gAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjNGRTVEMjA0RTYyMDY4MTE4QTZERUMzRjYwQTNCMDU2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkwM0FBODcwQzIzNzExRTM4NDlFQjkxNEE1NkQ2RDkyIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkwM0FBODZGQzIzNzExRTM4NDlFQjkxNEE1NkQ2RDkyIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3OTgzRTdGMjk2MjE2ODExODIyQUY2REMzQjFDOTE4OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozRkU1RDIwNEU2MjA2ODExOEE2REVDM0Y2MEEzQjA1NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAAAAAAALAAAAAAYACkAAASIkA3Qqr04u31E/tq2EQhoimIxmB+KJizmomtczbTd4HnM96efqAYSAkPGDVGWFHmQTcfzEkVNb1UnNavFch2F5zflGacUZtEh7SAA0u7dOC7n0uvVO74ZoGyjfVBGgYI/hIU4h4guiosijY4OAQY2hpSViZeYjJqban46eAFXoWALpKENJakfEQA7);
+        border-radius: 5px;
+        font-size: 1.125em;
+      }
+
+    .donation__show-comments, .donation__comments, .donation__meta, .donation__write-comment{
+      font-size: 0.75em;
+    }
+    .donation__show-comments, .donation__comments > li, .donation__write-comment{
+      padding: 1em;
+      margin-bottom: 2px;
+      background: #eee;
+      border-radius: 3px;
+    }
+    .donation__show-comments{
+      display: block;
+      font-weight: bold;
+      color: inherit;
+    }
+    .donation__show-comments:hover{
+      background: #e0e0e0;
+      color: inherit;
+      text-decoration: none;
+    }
+    .donation__comments{
+      padding: 0;
+      list-style: none;
+    }
+      .comment__date{
+        color: #999;
+      }
+    .donation__write-comment{
+      margin-bottom: 1em;
+    }
+      .donation__write-comment input{
+        width: 100%;
+        padding: 0.75em;
+        border: 2px #ccc solid;
+        border-radius: 5px;
+        font-size: inherit;
+      }
+
+  .load-more-donations{
+    display: block;
+    line-height: 3;
+    background: #fff;
+    border: 2px #ccc solid;
+    border-radius: 5px;
+    font-size: 1.125em;
+    text-align: center;
+    color: inherit;
+  }
+  .load-more-donations:hover{
+    background: #ccc;
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+  -webkit-touch-callout: none;
+}
+
+.pressed {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+  -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+  position: absolute;
+  left: -100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}

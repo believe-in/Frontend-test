@@ -6,7 +6,7 @@ module.exports = function(app) {
 	app.get('/', function(req, res) {
 		res.render('index', {
 			moment: moment,
-			donation: donations.byId(100),
+			donations: donations.find(null, 2),
 			comments: comments.find(null, 2)
 		});
 	});

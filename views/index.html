@@ -1,15 +1,42 @@
 <% include includes/header.html %>
 
-<p>&pound;<%= donation.amount / 100 %></p>
-<p><%= donation.message %></p>
+  <h1>Anna's sponsors</h1>
+  <h2>15 people have donated</h2>
 
-<ul>
-<% comments.forEach(function (comment) { %>
-	<li>
-		<p><%= comment.text %></p>
-		<p><%= moment(comment.date).format('Do MMM YYYY') %>
-	</li>
-<% }); %>
-</ul>
+  <ol class="donations">
+  <% donations.forEach(function (donation) { %>
+    <li>
+      <div class="donation__name"><%= donation.name %></div>
+      <div class="donation__message"><%= donation.message %></div>
+      <div class="donation__details clearfix">
+        <div class="donation__beneficiary">
+          <img src="/img/oxfam.png" alt="Donation to Oxfam">
+        </div>
+        <div class="donation__amount">&pound;<%= donation.amount / 100 %> sponsorship</div>
+      </div>
+  
+      <a href="#" class="donation__show-comments" data-showcomments>Show all comments</a>
+      <ul class="donation__comments">
+      <% comments.forEach(function (comment) { %>
+      	<li>
+      		<strong class="comment__name"><%= comment.name %></strong>
+          <span class="comment__text"><%= comment.text %></span>
+      		<div class="comment__date"><%= moment(comment.created).fromNow(true) %></div>
+      	</li>
+      <% }); %>
+      </ul>
+      <div class="donation__write-comment">
+        <input type="text" placeholder="Write your comment and press enter" data-newcomment>
+      </div>
+
+      <div class="donation__meta">
+        18 mins &bull; 2 &#9829; &bull; <a href="">Like</a> &bull; <a href="">Comment</a> &bull; <a href="">Share</a>
+      </div>
+
+    </li>
+  <% }); %>
+  </ol>
+
+  <a href="#" class="load-more-donations" data-loaddonations>Load more</a>
 
 <% include includes/footer.html %>
